@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spanish Lessons - 12 Week Curriculum</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f6fc;
+      --surface: #ffffff;
+      --surface-alt: #eef4ff;
+      --text: #1f2937;
+      --muted: #475569;
+      --border: #d8e1ef;
+      --brand: #1d4ed8;
+      --brand-dark: #1e40af;
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 18px 36px rgba(29, 78, 216, 0.16);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 0%, #e8f0ff 0%, rgba(232, 240, 255, 0) 42%),
+        linear-gradient(180deg, #f7faff 0%, var(--bg) 100%);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 3.5rem 0 2rem;
+    }
+
+    .hero-panel {
+      background: linear-gradient(140deg, #1d4ed8 0%, #2563eb 58%, #3b82f6 100%);
+      border-radius: var(--radius-lg);
+      color: #ffffff;
+      padding: clamp(1.5rem, 4vw, 2.75rem);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 0.45rem 0 0;
+      font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+      line-height: 1.2;
+    }
+
+    .hero-copy {
+      max-width: 72ch;
+      margin: 0.9rem 0 0;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.2rem;
+    }
+
+    .button-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 0.5rem 0.9rem;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .button-link:hover,
+    .button-link:focus-visible {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.75);
+    }
+
+    main {
+      padding: 0 0 2.5rem;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: clamp(1rem, 2.3vw, 1.6rem);
+      margin-bottom: 1.25rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.25rem, 2vw, 1.55rem);
+      line-height: 1.25;
+    }
+
+    .section-lead {
+      margin: 0.6rem 0 0;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+
+    .overview-list {
+      margin: 0.85rem 0 0;
+      padding-left: 1.05rem;
+      color: var(--muted);
+    }
+
+    .overview-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    .overview-list strong {
+      color: var(--text);
+    }
+
+    .usage-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .usage-card {
+      background: var(--surface-alt);
+      border: 1px solid #cfe0ff;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+    }
+
+    .usage-card h3 {
+      margin: 0;
+      font-size: 1.02rem;
+    }
+
+    .usage-card p {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+    }
+
+    .week-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .week-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .week-card:hover,
+    .week-card:focus-within {
+      transform: translateY(-3px);
+      border-color: #b6cdf8;
+      box-shadow: var(--shadow-hover);
+    }
+
+    .week-card h3 {
+      margin: 0;
+      font-size: 1.07rem;
+    }
+
+    .week-meta {
+      margin: 0.32rem 0 0.85rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .resource-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .resource-list a {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      color: var(--brand-dark);
+      background: #f8faff;
+      border: 1px solid #d9e6ff;
+      border-radius: 10px;
+      padding: 0.44rem 0.6rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    }
+
+    .resource-list a:hover,
+    .resource-list a:focus-visible {
+      background: #eaf1ff;
+      border-color: #a8c3f8;
+      color: var(--brand);
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding-top: 1.4rem;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 1rem));
+      }
+
+      .hero-panel,
+      .section-card {
+        border-radius: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <section class="hero-panel">
+        <p class="eyebrow">Spanish lessons for students and teachers</p>
+        <h1>Spanish Beginner Curriculum (12 Weeks)</h1>
+        <p class="hero-copy">
+          This project is a complete multi-week Spanish program with practical supporting materials. Each week includes a lesson plan, workbook, answer sheet, and supplemental vocabulary list so classes and independent learners can progress in a clear sequence.
+        </p>
+        <div class="hero-actions">
+          <a class="button-link" href="#how-to-use">How to Use</a>
+          <a class="button-link" href="#week-listings">Browse Week Resources</a>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section-card" aria-labelledby="project-overview-title">
+      <h2 id="project-overview-title">Project overview</h2>
+      <p class="section-lead">
+        Use this landing page to access all 12 weeks of beginner Spanish lessons and support documents. Materials are organized for classroom instruction, homework, and review.
+      </p>
+      <ul class="overview-list">
+        <li><strong>Lesson Plan:</strong> Instructor-ready sequence for guided learning.</li>
+        <li><strong>Workbook:</strong> Structured independent and partner practice.</li>
+        <li><strong>Answer Sheet:</strong> Reference answers and quick checking support.</li>
+        <li><strong>Supplemental Vocabulary List:</strong> Extra theme vocabulary for fluency building.</li>
+      </ul>
+    </section>
+
+    <section class="section-card" id="how-to-use" aria-labelledby="how-to-use-title">
+      <h2 id="how-to-use-title">How to use these materials</h2>
+      <div class="usage-grid">
+        <article class="usage-card">
+          <h3>1) Learn online in your browser</h3>
+          <p>
+            Open each week in order and study directly online. Start with the lesson plan, practice in the workbook, then review with the answer sheet and vocabulary list.
+          </p>
+        </article>
+        <article class="usage-card">
+          <h3>2) Save as PDF and print</h3>
+          <p>
+            For offline study or classroom packets, open a page and use your browser print option to save as PDF. Print selected documents for in-class activities and homework.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-card" id="week-listings" aria-labelledby="week-listings-title">
+      <h2 id="week-listings-title">Week listings</h2>
+      <p class="section-lead">Choose a week below to open the four core resources.</p>
+
+      <div class="week-grid">
+        <article class="week-card">
+          <h3>Week 1</h3>
+          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <ul class="resource-list">
+            <li><a href="Week_1_Spanish_Lesson/spanish_week_1_lesson_plan.html">Lesson Plan</a></li>
+            <li><a href="Week_1_Spanish_Lesson/spanish_week_1_workbook.html">Workbook</a></li>
+            <li><a href="Week_1_Spanish_Lesson/spanish_week_1_answer_sheet.html">Answer Sheet</a></li>
+            <li><a href="Week_1_Spanish_Lesson/spanish_week_1_supplemental_vocabulary_list.html">Supplemental Vocabulary List</a></li>
+          </ul>
+        </article>
+
+        <article class="week-card">
+          <h3>Week 2</h3>
+          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <ul class="resource-list">
+            <li><a href="Week_2_Spanish_Lesson/spanish_week_2_lesson_plan.html">Lesson Plan</a></li>
+            <li><a href="Week_2_Spanish_Lesson/spanish_week_2_workbook.html">Workbook</a></li>
+            <li><a href="Week_2_Spanish_Lesson/spanish_week_2_answer_sheet.html">Answer Sheet</a></li>
+            <li><a href="Week_2_Spanish_Lesson/spanish_week_2_supplemental_vocabulary_list.html">Supplemental Vocabulary List</a></li>
+          </ul>
+        </article>
+
+        <article class="week-card">
+          <h3>Week 3</h3>
+          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <ul class="resource-list">
+            <li><a href="Week_3_Spanish_Lesson/spanish_week_3_lesson_plan.html">Lesson Plan</a></li>
+            <li><a href="Week_3_Spanish_Lesson/spanish_week_3_workbook.html">Workbook</a></li>
+            <li><a href="Week_3_Spanish_Lesson/spanish_week_3_answer_sheet.html">Answer Sheet</a></li>
+            <li><a href="Week_3_Spanish_Lesson/spanish_week_3_supplemental_vocabulary_list.html">Supplemental Vocabulary List</a></li>
+          </ul>
+        </article>
+
+        <article class="week-card">
+          <h3>Week 4</h3>
+          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <ul class="resource-list">
+            <li><a href="Week_4_Spanish_Lesson/spanish_week_4_lesson_plan.html">Lesson Plan</a></li>
+            <li><a href="Week_4_Spanish_Lesson/spanish_week_4_workbook.html">Workbook</a></li>
+            <li><a href="Week_4_Spanish_Lesson/spanish_week_4_answer_sheet.html">Answer Sheet</a></li>
+            <li><a href="Week_4_Spanish_Lesson/spanish_week_4_supplemental_vocabulary_list.html">Supplemental Vocabulary List</a></li>
+          </ul>
+        </article>
+
+        <article class="week-card">
+          <h3>Week 5</h3>
+          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <ul class="resource-list">
+            <li><a href="Week_5_Spanish_Lesson/spanish_week_5_lesson_plan.html">Lesson Plan</a></li>
+            <li><a href="Week_5_Spanish_Lesson/spanish_week_5_workbook.html">Workbook</a></li>
+            <li><a href="Week_5_Spanish_Lesson/spanish_week_5_answer_sheet.html">Answer Sheet</a></li>
+            <li><a href="Week_5_Spanish_Lesson/spanish_week_5_supplemental_vocabulary_list.html">Supplemental Vocabulary List</a></li>
+          </ul>
+        </article>
+
+        <article class="week-card">
+          <h3>Week 6</h3>
+          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <ul class="resource-list">
+            <li><a href="Week_6_Spanish_Lesson/spanish_week_6_lesson_plan.html">Lesson Plan</a></li>
+            <li><a href="Week_6_Spanish_Lesson/spanish_week_6_workbook.html">Workbook</a></li>
+            <li><a href="Week_6_Spanish_Lesson/spanish_week_6_answer_sheet.html">Answer Sheet</a></li>
+            <li><a href="Week_6_Spanish_Lesson/spanish_week_6_supplemental_vocabulary_list.html">Supplemental Vocabulary List</a></li>
+          </ul>
+        </article>
+
+        <article class="week-card">
+          <h3>Week 7</h3>
+          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <ul class="resource-list">
+            <li><a href="Week_7_Spanish_Lesson/spanish_week_7_lesson_plan.html">Lesson Plan</a></li>
+            <li><a href="Week_7_Spanish_Lesson/spanish_week_7_workbook.html">Workbook</a></li>
+            <li><a href="Week_7_Spanish_Lesson/spanish_week_7_answer_sheet.html">Answer Sheet</a></li>
+            <li><a href="Week_7_Spanish_Lesson/spanish_week_7_supplemental_vocabulary_list.html">Supplemental Vocabulary List</a></li>
+          </ul>
+        </article>
+
+        <article class="week-card">
+          <h3>Week 8</h3>
+          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <ul class="resource-list">
+            <li><a href="Week_8_Spanish_Lesson/spanish_week_8_lesson_plan.html">Lesson Plan</a></li>
+            <li><a href="Week_8_Spanish_Lesson/spanish_week_8_workbook.html">Workbook</a></li>
+            <li><a href="Week_8_Spanish_Lesson/spanish_week_8_answer_sheet.html">Answer Sheet</a></li>
+            <li><a href="Week_8_Spanish_Lesson/spanish_week_8_supplemental_vocabulary_list.html">Supplemental Vocabulary List</a></li>
+          </ul>
+        </article>
+
+        <article class="week-card">
+          <h3>Week 9</h3>
+          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <ul class="resource-list">
+            <li><a href="Week_9_Spanish_Lesson/spanish_week_9_lesson_plan.html">Lesson Plan</a></li>
+            <li><a href="Week_9_Spanish_Lesson/spanish_week_9_workbook.html">Workbook</a></li>
+            <li><a href="Week_9_Spanish_Lesson/spanish_week_9_answer_sheet.html">Answer Sheet</a></li>
+            <li><a href="Week_9_Spanish_Lesson/spanish_week_9_supplemental_vocabulary_list.html">Supplemental Vocabulary List</a></li>
+          </ul>
+        </article>
+
+        <article class="week-card">
+          <h3>Week 10</h3>
+          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <ul class="resource-list">
+            <li><a href="Week_10_Spanish_Lesson/spanish_week_10_lesson_plan.html">Lesson Plan</a></li>
+            <li><a href="Week_10_Spanish_Lesson/spanish_week_10_workbook.html">Workbook</a></li>
+            <li><a href="Week_10_Spanish_Lesson/spanish_week_10_answer_sheet.html">Answer Sheet</a></li>
+            <li><a href="Week_10_Spanish_Lesson/spanish_week_10_supplemental_vocabulary_list.html">Supplemental Vocabulary List</a></li>
+          </ul>
+        </article>
+
+        <article class="week-card">
+          <h3>Week 11</h3>
+          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <ul class="resource-list">
+            <li><a href="Week_11_Spanish_Lesson/spanish_week_11_lesson_plan.html">Lesson Plan</a></li>
+            <li><a href="Week_11_Spanish_Lesson/spanish_week_11_workbook.html">Workbook</a></li>
+            <li><a href="Week_11_Spanish_Lesson/spanish_week_11_answer_sheet.html">Answer Sheet</a></li>
+            <li><a href="Week_11_Spanish_Lesson/spanish_week_11_supplemental_vocabulary_list.html">Supplemental Vocabulary List</a></li>
+          </ul>
+        </article>
+
+        <article class="week-card">
+          <h3>Week 12</h3>
+          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <ul class="resource-list">
+            <li><a href="Week_12_Spanish_Lesson/spanish_week_12_lesson_plan.html">Lesson Plan</a></li>
+            <li><a href="Week_12_Spanish_Lesson/spanish_week_12_workbook.html">Workbook</a></li>
+            <li><a href="Week_12_Spanish_Lesson/spanish_week_12_answer_sheet.html">Answer Sheet</a></li>
+            <li><a href="Week_12_Spanish_Lesson/spanish_week_12_supplemental_vocabulary_list.html">Supplemental Vocabulary List</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

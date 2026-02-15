@@ -1,5 +1,5 @@
 # Ignore all Markdown files
 *.md
-
+*docs
 # Ignore VS Code workspace settings
 .vscode/

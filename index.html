@@ -63,14 +63,17 @@
     }
 
     h1 {
-      margin: 0.45rem 0 0;
-      font-size: clamp(1.75rem, 3.2vw, 2.4rem);
-      line-height: 1.2;
+      margin: 0.55rem 0 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      font-weight: 750;
     }
 
     .hero-copy {
       max-width: 72ch;
-      margin: 0.9rem 0 0;
+      margin: 1rem 0 0;
+      font-size: 1.03rem;
       color: rgba(255, 255, 255, 0.95);
     }
 
@@ -116,12 +119,16 @@
 
     h2 {
       margin: 0;
-      font-size: clamp(1.25rem, 2vw, 1.55rem);
+      font-size: clamp(1.35rem, 2.3vw, 1.8rem);
       line-height: 1.25;
+      letter-spacing: -0.01em;
+      font-weight: 700;
     }
 
     .section-lead {
-      margin: 0.6rem 0 0;
+      margin: 0.75rem 0 0;
+      font-size: 1.02rem;
+      line-height: 1.62;
       color: var(--muted);
       max-width: 78ch;
     }
@@ -156,26 +163,80 @@
 
     .usage-card h3 {
       margin: 0;
-      font-size: 1.02rem;
+      font-size: 1.08rem;
+      line-height: 1.35;
     }
 
     .usage-card p {
-      margin: 0.45rem 0 0;
+      margin: 0.55rem 0 0;
+      font-size: 0.98rem;
+      line-height: 1.55;
       color: var(--muted);
+    }
+
+    .outcomes-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .outcome-card {
+      background: var(--surface-alt);
+      border: 1px solid #cfe0ff;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+    }
+
+    .outcome-card h3 {
+      margin: 0;
+      font-size: 1.08rem;
+      line-height: 1.38;
+    }
+
+    .outcome-card p {
+      margin: 0.55rem 0 0;
+      font-size: 0.98rem;
+      line-height: 1.58;
+      color: var(--muted);
+    }
+
+    .competency-panel {
+      margin-top: 1rem;
+      background: #f8fbff;
+      border: 1px solid #d5e6ff;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+    }
+
+    .competency-panel h3 {
+      margin: 0;
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    .competency-list {
+      margin: 0.65rem 0 0;
+      padding-left: 1.05rem;
+      color: var(--muted);
+    }
+
+    .competency-list li {
+      margin-bottom: 0.35rem;
     }
 
     .week-grid {
       margin-top: 1rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
-      gap: 0.9rem;
+      gap: 1rem;
     }
 
     .week-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 1rem;
+      padding: 1.15rem;
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
@@ -188,13 +249,16 @@
 
     .week-card h3 {
       margin: 0;
-      font-size: 1.07rem;
+      font-size: 1.32rem;
+      line-height: 1.18;
+      letter-spacing: -0.01em;
     }
 
-    .week-meta {
-      margin: 0.32rem 0 0.85rem;
+    .week-summary {
+      margin: 0.55rem 0 1rem;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.98rem;
+      line-height: 1.58;
     }
 
     .resource-list {
@@ -291,6 +355,50 @@
       </div>
     </section>
 
+    <section class="section-card" id="program-outcomes" aria-labelledby="program-outcomes-title">
+      <h2 id="program-outcomes-title">What students will learn in 12 weeks</h2>
+      <p class="section-lead">
+        This course progresses from core pronunciation and identity language to real-world communication in present, near future, and simple past, with weekly spiral review to build durable fluency.
+      </p>
+
+      <div class="outcomes-grid">
+        <article class="outcome-card">
+          <h3>Weeks 1-3: Foundations of beginner communication</h3>
+          <p>
+            Students build clear pronunciation, introduce themselves with <em>ser</em>, use classroom communication, conjugate regular present verbs, and discuss family and possession with high-frequency forms.
+          </p>
+        </article>
+        <article class="outcome-card">
+          <h3>Weeks 4-6: Functional everyday interaction</h3>
+          <p>
+            Students describe locations and directions, order food politely, and explain daily routines with reflexive verbs, time expressions, and frequency language.
+          </p>
+        </article>
+        <article class="outcome-card">
+          <h3>Weeks 7-9: Shopping, health, and comparison language</h3>
+          <p>
+            Students manage store conversations, talk about symptoms and obligations, and compare homes or neighborhoods using demonstratives, comparatives, and superlatives.
+          </p>
+        </article>
+        <article class="outcome-card">
+          <h3>Weeks 10-12: Integrated conversation and narration</h3>
+          <p>
+            Students discuss what is happening now, describe past events in beginner preterite, and integrate key structures in a capstone performance task.
+          </p>
+        </article>
+      </div>
+
+      <div class="competency-panel">
+        <h3>End-of-course competency (Week 12 target)</h3>
+        <ul class="competency-list">
+          <li>Sustain a 2-4 minute beginner conversation across familiar topics.</li>
+          <li>Switch appropriately between present, near future (<em>ir a</em>), and simple past forms.</li>
+          <li>Use repair strategies (clarification, repetition, and rephrasing) when communication breaks down.</li>
+          <li>Complete guided speaking and writing tasks that combine the full 12-week skill set.</li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section-card" id="week-listings" aria-labelledby="week-listings-title">
       <h2 id="week-listings-title">Week listings</h2>
       <p class="section-lead">Choose a week below to open the four core resources.</p>
@@ -298,7 +406,7 @@
       <div class="week-grid">
         <article class="week-card">
           <h3>Week 1</h3>
-          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <p class="week-summary">Build pronunciation confidence and core <em>ser</em> identity language to introduce yourself, ask origin questions, and hold first short conversations.</p>
           <ul class="resource-list">
             <li><a  href="Week_1_Spanish_Lesson/spanish_week_1_lesson_plan.html">Lesson Plan</a></li>
             <li><a  href="Week_1_Spanish_Lesson/spanish_week_1_workbook.html">Workbook</a></li>
@@ -309,7 +417,7 @@
 
         <article class="week-card">
           <h3>Week 2</h3>
-          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <p class="week-summary">Use classroom Spanish and regular <em>-ar</em> verbs to ask questions, participate, and describe simple study actions.</p>
           <ul class="resource-list">
             <li><a  href="Week_2_Spanish_Lesson/spanish_week_2_lesson_plan.html">Lesson Plan</a></li>
             <li><a  href="Week_2_Spanish_Lesson/spanish_week_2_workbook.html">Workbook</a></li>
@@ -320,7 +428,7 @@
 
         <article class="week-card">
           <h3>Week 3</h3>
-          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <p class="week-summary">Talk about family and personal details using <em>tener</em>, common <em>-er/-ir</em> verbs, and possessives like <em>mi/tu/su</em>.</p>
           <ul class="resource-list">
             <li><a  href="Week_3_Spanish_Lesson/spanish_week_3_lesson_plan.html">Lesson Plan</a></li>
             <li><a  href="Week_3_Spanish_Lesson/spanish_week_3_workbook.html">Workbook</a></li>
@@ -331,7 +439,7 @@
 
         <article class="week-card">
           <h3>Week 4</h3>
-          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <p class="week-summary">Describe where places are, use <em>hay</em> and <em>está/están</em> with prepositions, and give simple directions around town.</p>
           <ul class="resource-list">
             <li><a  href="Week_4_Spanish_Lesson/spanish_week_4_lesson_plan.html">Lesson Plan</a></li>
             <li><a  href="Week_4_Spanish_Lesson/spanish_week_4_workbook.html">Workbook</a></li>
@@ -342,7 +450,7 @@
 
         <article class="week-card">
           <h3>Week 5</h3>
-          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <p class="week-summary">Express food preferences with <em>gustar</em> and order meals politely using <em>quiero</em>, <em>puedo</em>, and quantity expressions.</p>
           <ul class="resource-list">
             <li><a  href="Week_5_Spanish_Lesson/spanish_week_5_lesson_plan.html">Lesson Plan</a></li>
             <li><a  href="Week_5_Spanish_Lesson/spanish_week_5_workbook.html">Workbook</a></li>
@@ -353,7 +461,7 @@
 
         <article class="week-card">
           <h3>Week 6</h3>
-          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <p class="week-summary">Describe daily routines with reflexive verbs, tell time, and discuss schedules and habits in sequence.</p>
           <ul class="resource-list">
             <li><a  href="Week_6_Spanish_Lesson/spanish_week_6_lesson_plan.html">Lesson Plan</a></li>
             <li><a  href="Week_6_Spanish_Lesson/spanish_week_6_workbook.html">Workbook</a></li>
@@ -364,7 +472,7 @@
 
         <article class="week-card">
           <h3>Week 7</h3>
-          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <p class="week-summary">Handle shopping conversations by asking about size, color, and price while using stem-changing verbs and simple comparisons.</p>
           <ul class="resource-list">
             <li><a  href="Week_7_Spanish_Lesson/spanish_week_7_lesson_plan.html">Lesson Plan</a></li>
             <li><a  href="Week_7_Spanish_Lesson/spanish_week_7_workbook.html">Workbook</a></li>
@@ -375,7 +483,7 @@
 
         <article class="week-card">
           <h3>Week 8</h3>
-          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <p class="week-summary">Discuss health using body-part and symptom language and express plans or obligations with <em>ir a</em> and <em>tener que</em>.</p>
           <ul class="resource-list">
             <li><a  href="Week_8_Spanish_Lesson/spanish_week_8_lesson_plan.html">Lesson Plan</a></li>
             <li><a  href="Week_8_Spanish_Lesson/spanish_week_8_workbook.html">Workbook</a></li>
@@ -386,7 +494,7 @@
 
         <article class="week-card">
           <h3>Week 9</h3>
-          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <p class="week-summary">Describe homes and neighborhoods while comparing options with comparatives, superlatives, and demonstratives.</p>
           <ul class="resource-list">
             <li><a  href="Week_9_Spanish_Lesson/spanish_week_9_lesson_plan.html">Lesson Plan</a></li>
             <li><a  href="Week_9_Spanish_Lesson/spanish_week_9_workbook.html">Workbook</a></li>
@@ -397,7 +505,7 @@
 
         <article class="week-card">
           <h3>Week 10</h3>
-          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <p class="week-summary">Talk about what is happening now with <em>estar + gerundio</em> and make social plans through invitations, acceptances, and declines.</p>
           <ul class="resource-list">
             <li><a  href="Week_10_Spanish_Lesson/spanish_week_10_lesson_plan.html">Lesson Plan</a></li>
             <li><a  href="Week_10_Spanish_Lesson/spanish_week_10_workbook.html">Workbook</a></li>
@@ -408,7 +516,7 @@
 
         <article class="week-card">
           <h3>Week 11</h3>
-          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <p class="week-summary">Narrate yesterday or weekend events using beginner preterite forms, sequence markers, and follow-up questions.</p>
           <ul class="resource-list">
             <li><a  href="Week_11_Spanish_Lesson/spanish_week_11_lesson_plan.html">Lesson Plan</a></li>
             <li><a  href="Week_11_Spanish_Lesson/spanish_week_11_workbook.html">Workbook</a></li>
@@ -419,7 +527,7 @@
 
         <article class="week-card">
           <h3>Week 12</h3>
-          <p class="week-meta">Lesson Plan + Workbook + Answer Sheet + Vocabulary</p>
+          <p class="week-summary">Integrate present, near future, and past structures to complete a capstone conversation and writing task with repair strategies.</p>
           <ul class="resource-list">
             <li><a  href="Week_12_Spanish_Lesson/spanish_week_12_lesson_plan.html">Lesson Plan</a></li>
             <li><a  href="Week_12_Spanish_Lesson/spanish_week_12_workbook.html">Workbook</a></li>

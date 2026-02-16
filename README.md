@@ -4,7 +4,7 @@ A complete beginner Spanish program with weekly lesson packages for classroom te
 
 ## Live Access
 
-- **GitHub Pages (primary):** https://opensignal4214.github.io/Spanish-Lessons/index.html
+- **GitHub Pages (primary):** https://opensignal4214.github.io/Spanish-Courses/
 - Start from the landing page to browse all 12 weeks and open materials in sequence.
 
 ## Project Overview

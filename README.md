@@ -7,6 +7,18 @@ A complete beginner Spanish program with weekly lesson packages for classroom te
 - **GitHub Pages (primary):** https://opensignal4214.github.io/Spanish-Courses/
 - Start from the landing page to browse all 12 weeks and open materials in sequence.
 
+## Languages
+
+The full 12-week curriculum is available in two languages:
+
+- **English** (default) — at the repository root.
+- **Traditional Chinese (繁體中文, Taiwan)** — under `tw/`.
+
+Spanish (the language being learned) stays in Spanish in both editions;
+instructions, explanations, and glosses are localized. Use the language dropdown
+on the landing page, or the **English ⇄ 中文** toggle in the top navigation of
+any weekly page, to switch. Your choice is remembered between visits.
+
 ## Project Overview
 
 This repository provides a structured 12-week Spanish curriculum (beginner level, A1 toward A1+) with practical learning resources for each week.
@@ -67,8 +79,12 @@ Within each `Week_<N>_Spanish_Lesson/` directory, files follow this naming patte
 ## Contributor Notes (Short)
 
 - Keep week folder and file naming conventions consistent.
-- Update `index.html` whenever files are added, renamed, or reorganized.
+- Update `index.html` (and `tw/index.html`) whenever files are added, renamed, or reorganized.
 - Keep weekly resources aligned as a four-document package.
+- Keep each `tw/` page structurally aligned with its English source.
+- See `CONTRIBUTING.md` for the authoring and translation guidelines.
+- Before committing, run `bash scripts/check_consistency.sh` to catch missing
+  shared includes, leftover boilerplate, and translation coverage gaps.
 
 ## Deployment Note
 

@@ -323,7 +323,8 @@ table:not(.table) th{ background:#f4f6f8; font-weight:700; }
   box-shadow:0 0 0 3px #e2e8f0;
 }
 
-.top-nav{ margin:0 0 12px; }
+.top-nav{ margin:0 0 12px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.lang-toggle{ margin-left:auto; }
 .home-link{
   display:inline-flex;
   align-items:center;
@@ -355,6 +356,7 @@ table:not(.table) th{ background:#f4f6f8; font-weight:700; }
 .page-break{ page-break-before:always; }
 
 @media print{
+  .lang-toggle{ display:none; }
   .page-break{ break-before:page; }
   .card, .note{
     break-inside:avoid;
